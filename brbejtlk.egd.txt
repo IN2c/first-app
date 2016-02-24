@@ -1,0 +1,14 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+#   (use "git pull" to update your local branch)
+#
+# Changes to be committed:
+#	new file:   temperature/www/css/bootstrap.min.css
+#	modified:   temperature/www/css/index.css
+#	modified:   temperature/www/index.html
+#	new file:   temperature/www/js/bootstrap.min.js
+#
+
