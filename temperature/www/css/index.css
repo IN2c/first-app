@@ -1,93 +1,79 @@
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
-
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+  margin-top: 50px;
+}
+*:visited {
+  outline: none;
+}
+.ink {
+	display: block; position: absolute;
+	background: hsl(180, 40%, 80%);
+	border-radius: 100%;
+	transform: scale(0);
+}
+.ink.animate {animation: ripple 0.65s linear;}
+@keyframes ripple {
+100% {opacity: 0; transform: scale(2.5);}
 }
 
-.app {
-    background:url(../img/logo.png) no-repeat center top;
-    position:absolute;
-    left:50%;
-    top:50%;
-    height:50px;
-    width:225px;
-    text-align:center;
-    padding:180px 0px 0px 0px;
-    margin:-115px 0px 0px -112px;
+.navbar-inverse {
+  background-image: -webkit-linear-gradient(top,#33AC71 0,#338871 100%);
+  background-image: -o-linear-gradient(top,#33AC71 0,#338871 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#33AC71),to(#338871));
+  background-image: linear-gradient(to bottom,#33AC71 0,#338871 100%);
+  border-color: #FFF;
+}
+.navbar-inverse .navbar-toggle {
+  border-color: transparent;
+  float: left;
+  margin-right: 0;
+  margin-left: 15px;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+  background-color: transparent;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color: #FFF;
+}
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {
+  text-shadow: none;
+  font-size: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+  background-image: none;
+  background-color: rgba(51, 172, 113, 0.5);
+  font-weight: bolder;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;
-        margin:-90px 0px 0px -198px;
-    }
+section .container .title, .form {
+  text-align: center;
+}
+section .container .title {
+  margin: 75px 0 100px 0;
+}
+section .container .title h1 {
+  font-size: 50px;
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+section .container .form {
+  margin: 0;
+}
+section .container .form p {
+  font-size: 18px;
+}
+section .container .form form input#temperature {
+  padding: 10px;
+  width: 60px;
+  text-align: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
-
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
-
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
-
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
-
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+section .container .form form input#tempsubmit {
+  margin-top: 150px;
 }
