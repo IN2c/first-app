@@ -37,7 +37,7 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="index.php">Eingabe</a></li>
-          <li><a href="uebersicht.php">&Uuml;bersicht</a></li>
+          <li><a href="read.php">&Uuml;bersicht</a></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
