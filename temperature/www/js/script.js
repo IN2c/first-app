@@ -2,14 +2,16 @@
   function deleteEintrag(id){
     $.ajax({
       type:"GET",
-      url:"../delete.php",
+      url:"../www/delete.php",
       data:{id:id},
       success:function(data){
         console.log(data);
-        window.location.reload();
+        //location.reload("#Tabelle");
+        refreshTable();
         alert("WUHUUUUU");
       },
-      error:function(){
+      error:function(data){
+        console.log(data);
         alert("something failed...");
       }
     });
@@ -30,6 +32,11 @@
         console.log(error);
       }
     })
+  };
+
+  function refreshTable(){
+    var table = $("#Tabelle").dataTable();
+    table.fnReloadAjax();
   };
 
   $('form').submit(function(e) {
