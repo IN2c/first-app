@@ -104,5 +104,6 @@ section .container .form form input#tempsubmit {
 }
 .ubersicht .button .btn {
   float: right;
+  margin-right: 2px;
   width: 100%
 }
