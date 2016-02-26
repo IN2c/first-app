@@ -37,21 +37,39 @@ require('connect.php');
       </div>
     </div>
   </nav>
-  <?php
+  <section>
+    <div class="title-detail">
+      <h1>&Uuml;bersicht</h1>
+    </div>
+    <table class="ubersicht">
+      <tr>
+        <th>
+          ID
+        </th>
+        <th>
+          Temperatur
+        </th>
+        <th>
+          Datum
+        </th>
+      </tr>
+      <?php
 
-    $sql = "SELECT * FROM eintrag";
-    $anzeige = mysqli_query($db_link, $sql);
-    while($row = mysqli_fetch_assoc($anzeige))
-    {
-      $ID = $row["ID"];
-      echo "<tr><td>".$ID." "."</td>";
-      $temp = $row["Temperatur"];
-      echo "<td>".$temp." "."</td>";
-      $datum = $row["Date"];
-      echo "<td>".$datum."</td>";
-      echo "<td><button class=\"btn btn-danger\" id=".$ID." onclick='deleteEintrag(".$ID.")'>Delete</button></td></tr></br>";
-    }
-  ?>
+        $sql = "SELECT * FROM eintrag";
+        $anzeige = mysqli_query($db_link, $sql);
+        while($row = mysqli_fetch_assoc($anzeige))
+        {
+          $ID = $row["ID"];
+          echo "<tr><td class=\"nummer\">".$ID." "."</td>";
+          $temp = $row["Temperatur"];
+          echo "<td class=\"temperatur\">".$temp." "."</td>";
+          $datum = $row["Date"];
+          echo "<td class=\"datum\">".$datum."</td>";
+          echo "<td class=\"button\"><button class=\"btn btn-danger\" id=".$ID." onclick='deleteEintrag(".$ID.")'>Delete</button></td></tr>";
+        }
+      ?>
+    </table>
+  </section>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/script.js"></script>
