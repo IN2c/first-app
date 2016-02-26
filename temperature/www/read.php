@@ -3,14 +3,14 @@ require('connect.php');
  ?>
 <html>
 <head>
-<<<<<<< HEAD
+
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript" src="http://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="js/fnReloadAjax.js"></script>
 
 
-=======
+
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +24,6 @@ require('connect.php');
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
->>>>>>> 9e31152feac797e6db4fd359f612a0d4aabbb397
 </head>
 
 <body>
@@ -62,23 +61,8 @@ require('connect.php');
           Datum
         </th>
       </tr>
-      <?php
 
-<<<<<<< HEAD
-    $sql = "SELECT * FROM eintrag";
-    $anzeige = mysqli_query($db_link, $sql);
-    while($row = mysqli_fetch_assoc($anzeige))
-    {
-      $ID = $row["ID"];
-      echo "<tr id='Tabelle'><td>".$ID." "."</td>";
-      $temp = $row["Temperatur"];
-      echo "<td>".$temp." "."</td>";
-      $datum = $row["Date"];
-      echo "<td>".$datum."</td>";
-      echo "<td><button id=".$ID." onclick='deleteEintrag(".$ID.")'>Delete</button></td></tr></br>";
-    }
-  ?>
-=======
+      <?php
         $sql = "SELECT * FROM eintrag";
         $anzeige = mysqli_query($db_link, $sql);
         while($row = mysqli_fetch_assoc($anzeige))
@@ -97,6 +81,5 @@ require('connect.php');
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/script.js"></script>
->>>>>>> 9e31152feac797e6db4fd359f612a0d4aabbb397
 </body>
 </html>
