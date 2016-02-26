@@ -1,5 +1,5 @@
 <?php
-require('connect.php');
+  require('connect.php');
  ?>
 <html>
 <head>
@@ -48,6 +48,7 @@ require('connect.php');
       <h1>&Uuml;bersicht</h1>
     </div>
     <table class="ubersicht">
+      <thead>
       <tr>
         <th>
           ID
@@ -59,21 +60,9 @@ require('connect.php');
           Datum
         </th>
       </tr>
-
-      <?php
-        $sql = "SELECT * FROM eintrag";
-        $anzeige = mysqli_query($db_link, $sql);
-        while($row = mysqli_fetch_assoc($anzeige))
-        {
-          $ID = $row["ID"];
-          echo "<tr><td class=\"nummer\">".$ID." "."</td>";
-          $temp = $row["Temperatur"];
-          echo "<td class=\"temperatur\">".$temp." "."</td>";
-          $datum = $row["Date"];
-          echo "<td class=\"datum\">".$datum."</td>";
-          echo "<td class=\"button\"><button class=\"btn btn-danger\" id=".$ID." onclick='deleteEintrag(".$ID.",".$anzeige.")'>Delete</button></td></tr>";
-        }
-      ?>
+    </thead>
+        <tbody id="ausgabe">
+        </tbody>
     </table>
   </section>
   <script src="js/jquery.min.js"></script>
