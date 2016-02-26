@@ -2,7 +2,7 @@
   function deleteEintrag(id){
     $.ajax({
       type:"GET",
-      url:"../www/delete.php",
+      url:"./delete.php",
       success:function(){
         refreshTable();
       },
@@ -33,7 +33,7 @@
 $(document).ready(function refreshTable(resultarray2){
   $.ajax({
     type:"GET",
-    url:"../www/read_json.php",
+    url:"./read_json.php",
     success:function(data){
       console.log(data);
       var tabelle = "";
