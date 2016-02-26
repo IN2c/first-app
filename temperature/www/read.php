@@ -3,12 +3,6 @@
  ?>
 <html>
 <head>
-
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
-
-
-
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,8 +59,8 @@
         </tbody>
     </table>
   </section>
-  <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/script.js"></script>
 </body>
 </html>
