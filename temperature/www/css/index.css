@@ -4,22 +4,12 @@ body {
 *:visited {
   outline: none;
 }
-.ink {
-	display: block; position: absolute;
-	background: hsl(180, 40%, 80%);
-	border-radius: 100%;
-	transform: scale(0);
-}
-.ink.animate {animation: ripple 0.65s linear;}
-@keyframes ripple {
-100% {opacity: 0; transform: scale(2.5);}
-}
 
 .navbar-inverse {
-  background-image: -webkit-linear-gradient(top,#33AC71 0,#338871 100%);
-  background-image: -o-linear-gradient(top,#33AC71 0,#338871 100%);
-  background-image: -webkit-gradient(linear,left top,left bottom,from(#33AC71),to(#338871));
-  background-image: linear-gradient(to bottom,#33AC71 0,#338871 100%);
+  background-image: -webkit-linear-gradient(top,#5cb85c 0,#419641 100%);
+  background-image: -o-linear-gradient(top,#5cb85c 0,#419641 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#5cb85c),to(#419641));
+  background-image: linear-gradient(to bottom,#5cb85c 0,#419641 100%);
   border-color: #FFF;
 }
 .navbar-inverse .navbar-toggle {
@@ -39,10 +29,11 @@ body {
   font-size: 18px;
   padding-top: 15px;
   padding-bottom: 15px;
+  color: #CFCFCF;
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
   background-image: none;
-  background-color: rgba(51, 172, 113, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
   font-weight: bolder;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -81,4 +72,37 @@ input::-webkit-inner-spin-button {
 
 section .container .form form input#tempsubmit {
   margin-top: 150px;
+}
+
+#tempsubmit {
+  margin-top: 150px;
+}
+
+/* -- ENDE INDEX -- */
+/* -- START ÜBERSICHT -- */
+
+.title-detail {
+  text-align: center;
+  margin: 75px 0 25px 0;
+}
+
+.ubersicht {
+  margin-top: 10px;
+  width: 100%;
+}
+.ubersicht th {
+  text-align: center;
+  padding-bottom: 15px;
+  background-color: #FFF;
+}
+.ubersicht td {
+  text-align: center;
+  padding: 5px 0;
+}
+.ubersicht tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.ubersicht .button .btn {
+  float: right;
+  width: 100%
 }

@@ -47,7 +47,7 @@
         <form>
           <input type="number" id="temperature" name="temperature" placeholder="°C" min="-50" max="60">
           <br>
-          <button onclick="insertEintrag()" id="tempsubmit" class="btn btn-lg btn-default" placeholder="Senden">
+          <button onclick="insertEintrag()" id="tempsubmit" class="btn btn-lg btn-success">Senden</button>
           </form>
       </div>
     </div>
