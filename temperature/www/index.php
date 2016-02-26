@@ -32,6 +32,7 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="index.php">Eingabe</a></li>
           <li><a href="read.php">&Uuml;bersicht</a></li>
+          <li><a href="geolocation.php">Geolocation</a></li>
         </ul>
       </div>
     </div>
