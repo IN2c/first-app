@@ -15,12 +15,6 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
@@ -40,7 +34,6 @@
           <li><a href="read.php">&Uuml;bersicht</a></li>
         </ul>
       </div>
-      <!--/.nav-collapse -->
     </div>
   </nav>
 
@@ -52,20 +45,18 @@
       <div class="form">
         <p>Bitte geben Sie die aktuelle Temparatur ein:</p>
         <form>
-          <input type="number" id="temperature" name="temperature" placeholder="°C" min="-50" max="50">
+          <input type="number" id="temperature" name="temperature" placeholder="°C" min="-50" max="60">
           <br>
-          <input type="submit" id="tempsubmit" class="btn btn-lg btn-default" value="senden">
-        </form>
+          <button onclick="insertEintrag()" id="tempsubmit" class="btn btn-lg btn-default" placeholder="Senden">
+          </form>
       </div>
     </div>
   </section>
 
-  <!-- Bootstrap core JavaScript
-      ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
+
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/docs.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
