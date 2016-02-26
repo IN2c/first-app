@@ -6,9 +6,7 @@
       data:{id:id},
       success:function(data){
         console.log(data);
-        //location.reload("#Tabelle");
         refreshTable();
-        alert("WUHUUUUU");
       },
       error:function(data){
         console.log(data);
@@ -35,8 +33,7 @@
   };
 
   function refreshTable(){
-    var table = $("#Tabelle").dataTable();
-    table.fnReloadAjax();
+
   };
 
   $('form').submit(function(e) {
