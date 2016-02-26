@@ -24,6 +24,7 @@
       data: {tmp:tmp},
       success:function(data){
         console.log(data);
+        $("#temperature").val(null);
       },
       error:function(error){
         console.log(error);
