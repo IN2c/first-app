@@ -6,6 +6,8 @@
 	@$template	= $_GET['template'];
 	@$funktion 	= $_GET['funktion'];
 	@$id 				= $_GET['id'];
+	@$wert  		= $_POST['tmp'];
+	@$funktion1 = $_POST['funktion'];
 
 	if($template == "uebersicht")
 	{
@@ -15,10 +17,15 @@
 	{
 		echo $controller->displayGeolocation();
 	}
-	elseif($funktion == "read_jason" || $funktion == "delete" || $funktion == "insert")
+	elseif($funktion == "read_jason" || $funktion == "delete")
 	{
 		$controller->getID($id);
 		$controller->executeFunction($funktion);
+	}
+	elseif($funktion1 == "insert")
+	{
+		$controller->getWert($wert);
+		$controller->executeFunction($funktion1);
 	}
 	else
 	{

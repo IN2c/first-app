@@ -5,6 +5,7 @@ function deleteEintrag(id){
     url:"./index.php",
     data: {funktion:deleet,id:id},
     success:function(data){
+      //console.log(data);
       refreshTable();
     },
     error:function(){
@@ -40,12 +41,13 @@ function refreshTable(){
 };
 
 function insertEintrag(){
+  var insert = "insert";
   var tmp = $('#temperature').val();
   console.log(tmp);
   $.ajax({
     type:"POST",
-    url:"insert.php",
-    data: {tmp:tmp},
+    url:"./index.php",
+    data: {tmp:tmp,funktion:insert},
     success:function(data){
       console.log(data);
       $("#temperature").val(null);

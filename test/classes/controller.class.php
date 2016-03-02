@@ -42,6 +42,11 @@
 			$this->ID = $id;
 		}
 
+		public function getWert($wert)
+		{
+			$this->wert = $wert;
+		}
+
 		public function executeFunction($funktion)
 		{
 			if($funktion == "insert")

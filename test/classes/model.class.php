@@ -12,35 +12,35 @@ class Model{
 
   public function connect()
   {
- 		// überprüft ob Verbidnung vorhanden ist, wenn nicht: Abbruch
- 		if (!$this->db_link) {
- 			die("Connection failed: " . mysqli_connect_error());
- 		}
+	// überprüft ob Verbidnung vorhanden ist, wenn nicht: Abbruch
+	if (!$this->db_link) {
+		die("Connection failed: " . mysqli_connect_error());
+	}
 
- 		// Erstellt DB mit UTF8 Codierung
- 		$sql = 'CREATE DATABASE IF NOT EXISTS temperature CHARACTER SET utf8 COLLATE utf8_general_ci';
- 		$result = mysqli_query($this->db_link, $sql)
- 			or die("Failed to create database: " . mysql_error());
+	// Erstellt DB mit UTF8 Codierung
+	$sql = 'CREATE DATABASE IF NOT EXISTS temperature CHARACTER SET utf8 COLLATE utf8_general_ci';
+	$result = mysqli_query($this->db_link, $sql)
+		or die("Failed to create database: " . mysql_error());
 
- 		//create table user if not exists
- 		$sql = 'CREATE TABLE IF NOT EXISTS eintrag(
- 		ID int NOT NULL AUTO_INCREMENT,
- 		Temperatur double NOT NULL,
- 		Date varchar(50) NOT NULL,
- 		PRIMARY KEY (ID)
- 		)';
+	//create table user if not exists
+	$sql = 'CREATE TABLE IF NOT EXISTS eintrag(
+	ID int NOT NULL AUTO_INCREMENT,
+	Temperatur double NOT NULL,
+	Date varchar(50) NOT NULL,
+	PRIMARY KEY (ID)
+	)';
 
- 		$Data = mysqli_query($this->db_link, $sql);
+	$Data = mysqli_query($this->db_link, $sql);
   }
 
   public function delete($id)
   {
-      echo "wir waren hier";
-      $this->connect();
-      echo $id;
-      $sql = "DELETE FROM eintrag WHERE ID='".$id."'";
-      mysqli_query($this->db_link,$sql);
-      mysqli_close($this->db_link);
+    echo "wir waren hier";
+    $this->connect();
+    echo $id;
+    $sql = "DELETE FROM eintrag WHERE ID='".$id."'";
+    mysqli_query($this->db_link,$sql);
+    mysqli_close($this->db_link);
   }
 
   public function insert()
@@ -49,11 +49,13 @@ class Model{
     date_default_timezone_set("Europe/Berlin");
     $datum = date("Y-m-d h:i:s");
     $Temperatur = $_POST["tmp"];
-    echo $Temperatur;
+    //echo $Temperatur;
     if($Temperatur < -50 || $Temperatur > 60){
-      echo "HAHA";
-    }else{
-      echo "Lucker";
+      echo "Nothing posted";
+    }
+    else
+    {
+      echo "Variable posted";
       $sql = "INSERT INTO eintrag VALUES (NULL, '".$Temperatur."', '".$datum."');";
       mysqli_query($this->db_link, $sql);
       mysqli_close($this->db_link);
@@ -73,8 +75,6 @@ class Model{
     mysqli_close($this->db_link);
     return json_encode($resultarray2);
   }
-
-
 	public static function getData(){
 	}
 }
