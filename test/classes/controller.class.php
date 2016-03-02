@@ -5,6 +5,7 @@
 		private $view;
 		private $data;
 		private $model;
+		private $ID;
 
 		public function __construct(){
 			$this->view = new View();
@@ -36,20 +37,26 @@
 			return $this->view->parseTemplate();
 		}
 
+		public function getID($id)
+		{
+			$this->ID = $id;
+		}
+
 		public function executeFunction($funktion)
 		{
 			if($funktion == "insert")
 			{
-				$this->model->insert();
+				$this->data = $this->model->insert();
 			}
 			elseif($funktion == "read_jason")
 			{
 				$this->data =	$this->model->read_jason();
 				print_r($this->data);
 			}
-			elseif($funktion == "delte")
+			elseif($funktion == "delete")
 			{
-				$this->model->delete();
+				$this->model->delete($this->ID);
+				echo $this->ID;
 			}
 			else
 			{

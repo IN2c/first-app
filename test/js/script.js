@@ -1,43 +1,44 @@
 
   function deleteEintrag(id){
+    var deleet = 'delete';
     $.ajax({
       type:"GET",
-      url:"./delete.php?id="+id+"",
-      success:function(){
-        console.log();
+      url:"./index.php",
+      data: {funktion:deleet,id:id},
+      success:function(data){
         refreshTable();
       },
-      error:function(data){
-        console.log(data);
-        alert("something failed...");
+      error:function(){
       }
     });
   };
 
-function refreshTable(){
-  $.ajax({
-    type:"GET",
-    url:"./index.php?template=uebersicht&amp;funktion=read_jason",
-    success:function(data){
-      var tabelle = "";
-      $.each(JSON.parse(data), function(id, obj){
-        tabelle += "<tr>\
-        <td>"+obj.ID+"</td>\
-        <td>"+obj.Temperatur+"</td>\
-        <td>"+obj.Date+"</td>\
-        <td class='button'><button class='btn btn-danger' id='"+obj.ID+"' onclick='deleteEintrag("+obj.ID+")'>Delete</button></td>\
-        </tr>"
-      });
+  function refreshTable(){
+    var read_jason = 'read_jason';
+    $.ajax({
+      type:"GET",
+      url:"./index.php",
+      data: {funktion:read_jason},
+      success:function(data){
+        var tabelle = "";
+        $.each(JSON.parse(data), function(id, obj){
+          tabelle += "<tr>\
+          <td>"+obj.ID+"</td>\
+          <td>"+obj.Temperatur+"</td>\
+          <td>"+obj.Date+"</td>\
+          <td class='button'><button class='btn btn-danger' id='"+obj.ID+"' onclick='deleteEintrag("+obj.ID+")'>Delete</button></td>\
+          </tr>"
+        });
 
-      $("#ausgabe").html(tabelle);
-    },
-    error:function(data){
-    },
-    beforeSend:function(){
-      $("#ausgabe").html = ("");
-    }
-  });
-  };
+        $("#ausgabe").html(tabelle);
+      },
+      error:function(data){
+      },
+      beforeSend:function(){
+        $("#ausgabe").html = ("");
+      }
+    });
+    };
 
   function insertEintrag(){
     var tmp = $('#temperature').val();
@@ -76,14 +77,13 @@ function loadTable(){
     url:"./index.php",
     data: {funktion:read_jason},
     success:function(data){
-      console.log(data);
       var tabelle = "";
       $.each(JSON.parse(data), function(id, obj){
         tabelle += "<tr>\
         <td>"+obj.ID+"</td>\
         <td>"+obj.Temperatur+"</td>\
         <td>"+obj.Date+"</td>\
-        <td class='button'><button class='btn btn-danger' id='"+obj.ID+"' href='/index.php?template=uebersicht&amp;funktion=delete&amp;id='"+obj.ID+"'>Delete</button></td>\
+        <td class='button'><button class='btn btn-danger' id='"+obj.ID+"' onclick='deleteEintrag("+obj.ID+")'>Delete</button></td>\
         </tr>"
       });
 

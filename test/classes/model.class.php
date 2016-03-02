@@ -33,12 +33,12 @@ class Model{
  		$Data = mysqli_query($this->db_link, $sql);
   }
 
-  public function delete()
+  public function delete($id)
   {
+      echo "wir waren hier";
       $this->connect();
-      $ID = $_GET["id"];
-      echo $ID;
-      $sql = "DELETE FROM eintrag WHERE ID='".$ID."'";
+      echo $id;
+      $sql = "DELETE FROM eintrag WHERE ID='".$id."'";
       mysqli_query($this->db_link,$sql);
       mysqli_close($this->db_link);
   }
