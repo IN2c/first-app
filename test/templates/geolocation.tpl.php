@@ -46,7 +46,7 @@
     </section>
 
 
-	<script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     // Wait for device API libraries to load
@@ -63,7 +63,7 @@
     //
     function onSuccess(position) {
         var element = document.getElementById('geolocation');
-        element.innerHTML = 'Google maps: <br /> <iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q='+ position.coords.latitude +','+ position.coords.longitude +'&hl=es;z=14&amp;output=embed"></iframe>';
+        element.innerHTML = 'Google maps: <br /> <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q='+ position.coords.latitude +','+ position.coords.longitude +'&hl=es;z=14&amp;output=embed"></iframe>';
     }
 
     // onError Callback receives a PositionError object
@@ -74,8 +74,8 @@
     }
 
     </script>
-	
-	<script src="js/jquery.min.js"></script>
+
+	   <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
   </body>
