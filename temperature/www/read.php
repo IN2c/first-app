@@ -17,7 +17,6 @@
   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
 </head>
-
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
