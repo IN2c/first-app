@@ -17,7 +17,7 @@
 function refreshTable(){
   $.ajax({
     type:"GET",
-    url:"./read_json.php",
+    url:"./index.php?template=uebersicht&amp;funktion=read_jason",
     success:function(data){
       var tabelle = "";
       $.each(JSON.parse(data), function(id, obj){
@@ -67,20 +67,23 @@ function refreshTable(){
 
   $( document ).ready(function() {
     loadTable();
-});
+  });
 
 function loadTable(){
+  var read_jason = 'read_jason';
   $.ajax({
     type:"GET",
-    url:"./read_json.php",
+    url:"./index.php",
+    data: {funktion:read_jason},
     success:function(data){
+      console.log(data);
       var tabelle = "";
       $.each(JSON.parse(data), function(id, obj){
         tabelle += "<tr>\
         <td>"+obj.ID+"</td>\
         <td>"+obj.Temperatur+"</td>\
         <td>"+obj.Date+"</td>\
-        <td class='button'><button class='btn btn-danger' id='"+obj.ID+"' onclick='deleteEintrag("+obj.ID+")'>Delete</button></td>\
+        <td class='button'><button class='btn btn-danger' id='"+obj.ID+"' href='/index.php?template=uebersicht&amp;funktion=delete&amp;id='"+obj.ID+"'>Delete</button></td>\
         </tr>"
       });
 
