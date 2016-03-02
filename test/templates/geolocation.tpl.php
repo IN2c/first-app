@@ -39,7 +39,7 @@
     <section>
       <div class="container">
         <div class="title">
-          <h1>Eingabe</h1>
+          <h1>Geolocation</h1>
         </div>
         <p id="geolocation">Finding geolocation...</p>
       </div>
@@ -75,7 +75,11 @@
 
     </script>
 
+<<<<<<< HEAD
 	   <script src="js/jquery.min.js"></script>
+=======
+	<script src="js/jquery.min.js"></script>
+>>>>>>> origin/master
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
   </body>
