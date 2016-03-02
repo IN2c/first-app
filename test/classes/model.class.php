@@ -1,6 +1,6 @@
 <?php
 class Model{
- 
+
 	public function __construct(){
 		//Variablen f�r DB-Verbindung
 		$servername = "localhost";
@@ -31,11 +31,9 @@ class Model{
 		PRIMARY KEY (ID)
 		)';
 
-		mysqli_query($db_link, $sql);
+		$Data = mysqli_query($db_link, $sql);
 	}
- 
 	public static function getData(){
-		return "Das Model gibt diese Daten an den Controller zur&uuml;ck :)";
 	}
 }
 ?>
