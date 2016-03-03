@@ -54,7 +54,7 @@ class Model{
     if($Temperatur < -50 || $Temperatur > 60){
       return "Nothing posted";
     }
-    elseif($Temperatur == NULL)
+    elseif($Temperatur == null)
     {
       return "Nothing posted";
     }
