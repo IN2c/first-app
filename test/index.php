@@ -32,6 +32,7 @@
 	}
 	elseif($funktion1 == "insert")
 	{
+		echo $wert;
 		$controller->getWert($wert);
 		$controller->executeFunction($funktion1);
 	}

@@ -8,6 +8,7 @@ class Model{
   private $password = "";
 
 	public function __construct(){
+    // verbindung zur DB mit der erstellung einer Tabelle, wenn noch nicht vorhanden
     $this->db_link = mysqli_connect($this->servername, $this->username, $this->password);
     $sql = 'CREATE DATABASE IF NOT EXISTS temperature CHARACTER SET utf8 COLLATE utf8_general_ci';
     $Data = mysqli_query($this->db_link, $sql);
@@ -17,25 +18,20 @@ class Model{
 
   public function connect()
   {
-	// überprüft ob Verbidnung vorhanden ist, wenn nicht: Abbruch
-	if (!$this->db_link) {
-		die("Connection failed: " . mysqli_connect_error());
-	}
+  	// überprüft ob Verbidnung vorhanden ist, wenn nicht: Abbruch
+  	if (!$this->db_link) {
+  		die("Connection failed: " . mysqli_connect_error());
+  	}
 
-	// Erstellt DB mit UTF8 Codierung
-	//$sql = 'CREATE DATABASE IF NOT EXISTS temperature CHARACTER SET utf8 COLLATE utf8_general_ci';
-	//$result = mysqli_query($this->db_link, $sql)
-	//	or die("Failed to create database: " . mysql_error());
+  	//create table user if not exists
+  	$sql = 'CREATE TABLE IF NOT EXISTS eintrag(
+  	ID int NOT NULL AUTO_INCREMENT,
+  	Temperatur double NOT NULL,
+  	Date varchar(50) NOT NULL,
+  	PRIMARY KEY (ID)
+  	)';
 
-	//create table user if not exists
-	$sql = 'CREATE TABLE IF NOT EXISTS eintrag(
-	ID int NOT NULL AUTO_INCREMENT,
-	Temperatur double NOT NULL,
-	Date varchar(50) NOT NULL,
-	PRIMARY KEY (ID)
-	)';
-
-	$Data = mysqli_query($this->db_link, $sql);
+  	$Data = mysqli_query($this->db_link, $sql);
   }
 
   public function delete($id)
@@ -56,6 +52,10 @@ class Model{
     $Temperatur = $_POST["tmp"];
     //echo $Temperatur;
     if($Temperatur < -50 || $Temperatur > 60){
+      return "Nothing posted";
+    }
+    elseif($Temperatur == NULL)
+    {
       return "Nothing posted";
     }
     else
