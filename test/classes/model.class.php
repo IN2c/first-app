@@ -8,6 +8,10 @@ class Model{
   private $password = "";
 
 	public function __construct(){
+    $this->db_link = mysqli_connect($this->servername, $this->username, $this->password);
+    $sql = 'CREATE DATABASE IF NOT EXISTS temperature CHARACTER SET utf8 COLLATE utf8_general_ci';
+    $Data = mysqli_query($this->db_link, $sql);
+
     $this->db_link = mysqli_connect($this->servername, $this->username, $this->password, "temperature");
 	}
 
@@ -19,9 +23,9 @@ class Model{
 	}
 
 	// Erstellt DB mit UTF8 Codierung
-	$sql = 'CREATE DATABASE IF NOT EXISTS temperature CHARACTER SET utf8 COLLATE utf8_general_ci';
-	$result = mysqli_query($this->db_link, $sql)
-		or die("Failed to create database: " . mysql_error());
+	//$sql = 'CREATE DATABASE IF NOT EXISTS temperature CHARACTER SET utf8 COLLATE utf8_general_ci';
+	//$result = mysqli_query($this->db_link, $sql)
+	//	or die("Failed to create database: " . mysql_error());
 
 	//create table user if not exists
 	$sql = 'CREATE TABLE IF NOT EXISTS eintrag(
