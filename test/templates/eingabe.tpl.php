@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Valentin(Haupttiel) & Janosh(php) -->
+  <!-- meta Informationenen und Einbinden der benötigten Dateien -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +18,7 @@
   <link href="css/index.css" rel="stylesheet">
 </head>
   <body>
+    <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -35,6 +38,7 @@
         </div>
       </div>
     </nav>
+    <!-- Inhalt der Website -->
     <section>
       <div class="container">
         <div class="title">
@@ -51,6 +55,7 @@
         </div>
       </div>
     </section>
+    <!-- Einbinden von JS scripts -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
