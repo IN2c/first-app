@@ -1,4 +1,5 @@
-﻿// Platform: windows
+// Valentin
+// Platform: windows
 // 533e1bfdbc57d54106ca39a02b21a1909f84fda7
 /*
  Licensed to the Apache Software Foundation (ASF) under one
@@ -8,9 +9,9 @@
  to you under the Apache License, Version 2.0 (the
  "License"); you may not use this file except in compliance
  with the License.  You may obtain a copy of the License at
- 
+
      http://www.apache.org/licenses/LICENSE-2.0
- 
+
  Unless required by applicable law or agreed to in writing,
  software distributed under the License is distributed on an
  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -1398,7 +1399,7 @@ exports.reset();
 define("cordova/platform", function(require, exports, module) {
 
 module.exports = {
-    // for backward compatibility we report 'windows8' when run on Windows 8.0 and 
+    // for backward compatibility we report 'windows8' when run on Windows 8.0 and
     // 'windows' for Windows 8.1 and Windows Phone 8.1
     id: (navigator.appVersion.indexOf("MSAppHost/1.0") !== -1) ? 'windows8' : 'windows',
     bootstrap:function() {

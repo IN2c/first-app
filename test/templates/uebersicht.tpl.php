@@ -1,5 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
+  <!-- Valentin(hauptteil) & Janosh(php) -->
+  <!-- meta Informationen und Einbinden von benötigten Dateien -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +18,7 @@
   <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
+  <!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -38,6 +42,7 @@
     <div class="title-detail">
       <h1>&Uuml;bersicht</h1>
     </div>
+    <!-- die Tabelle die auf der Übersicht Seite angezeigt wird -->
     <table class="ubersicht">
       <thead>
       <tr>
@@ -56,6 +61,7 @@
         </tbody>
     </table>
   </section>
+  <!-- Einbinden der Skripts -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
   <script src="js/bootstrap.min.js"></script>
