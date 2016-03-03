@@ -48,7 +48,7 @@
           <p><?php echo $this->content['content']; ?></p>
           <p>Bitte geben Sie die aktuelle Temparatur ein:</p>
           <form>
-            <input type="number" id="temperature" name="temperature" placeholder="°C" min="-50" max="60">
+            <input type="number" id="temperature" name="temperature" placeholder="°C">
             <br>
             <button onclick="insertEintrag()" id="tempsubmit" class="btn btn-lg btn-success">Senden</button>
             </form>
