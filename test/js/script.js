@@ -64,6 +64,7 @@ function insertEintrag(){
       console.log(data);
       if(data == "Nothing posted")
       {
+        $("#alert").fadeIn("slow");
         $("#alert").html("error");
         $("#alert").fadeOut(2000);
       }
