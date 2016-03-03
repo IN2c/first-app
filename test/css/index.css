@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Abel);
+
 body {
   margin-top: 50px;
 }
@@ -47,6 +49,7 @@ section .container .title {
 }
 section .container .title h1 {
   font-size: 50px;
+  font-family: 'Abel', sans-serif;
 }
 
 @-webkit-keyframes fade {
@@ -84,6 +87,9 @@ section .container .form form input#tempsubmit {
 .title-detail {
   text-align: center;
   margin: 75px 0 25px 0;
+}
+.title-detail h1 {
+	font-family: 'Abel', sans-serif;
 }
 
 .ubersicht {

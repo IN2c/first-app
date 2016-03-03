@@ -95,3 +95,21 @@ var read_jason = 'read_jason';
     }
   });
 };
+
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+
+    function onSuccess(position) {
+        var element = document.getElementById('geolocation');
+        element.innerHTML = '<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q='+ position.coords.latitude +','+ position.coords.longitude +'&hl=es;z=14&amp;output=embed"></iframe>';
+    }
+
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
