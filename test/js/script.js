@@ -59,12 +59,21 @@ function insertEintrag(){
     // hier wird der Wert, den man in Eingabefeld eingegeben hat und um was es sich handelt (insert) mitegegeben
     data: {tmp:tmp,funktion:insert},
     success:function(data){
-      console.log(data);
       // hier wird das Eingabefeld bei einem success geleert.
       $("#temperature").val(null);
+      console.log(data);
+      if(data == "Nothing posted")
+      {
+        $("#alert").html("error");
+        $("#alert").fadeOut(2000);
+      }
+      else
+      {
+        // do nothing
+      }
     },
-    error:function(error){
-      console.log(error);
+    error:function(data){
+      console.log(data);
     }
   })
 };

@@ -52,11 +52,11 @@ class Model{
     $Temperatur = $_POST["tmp"];
     //echo $Temperatur;
     if($Temperatur < -50 || $Temperatur > 60){
-      echo "Nothing posted";
+      return "Nothing posted";
     }
     else
     {
-      echo "Variable posted";
+      return "Variable posted";
       $sql = "INSERT INTO eintrag VALUES (NULL, '".$Temperatur."', '".$datum."');";
       mysqli_query($this->db_link, $sql);
       mysqli_close($this->db_link);

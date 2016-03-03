@@ -53,6 +53,7 @@
 			if($funktion == "insert")
 			{
 				$this->data = $this->model->insert();
+				print_r($this->data);
 			}
 			elseif($funktion == "read_jason")
 			{

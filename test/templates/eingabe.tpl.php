@@ -53,6 +53,8 @@
             <button onclick="insertEintrag()" id="tempsubmit" class="btn btn-lg btn-success">Senden</button>
             </form>
         </div>
+        <div class="alert-danger" id="alert">
+        </div>
       </div>
     </section>
     <!-- Einbinden von JS scripts -->
