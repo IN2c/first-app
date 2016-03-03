@@ -7,9 +7,6 @@ body {
 *:visited {
   outline: none;
 }
-.alert {
-  display: none;
-}
 .navbar-inverse {
   background-image: -webkit-linear-gradient(top,#5cb85c 0,#419641 100%);
   background-image: -o-linear-gradient(top,#5cb85c 0,#419641 100%);
@@ -48,11 +45,12 @@ section .container .title, .form {
   text-align: center;
 }
 section .container .title {
-  margin: 58px 0 70px 0;
+  margin: 40px 0 50px 0;
 }
 section .container .title h1 {
   font-size: 50px;
   font-family: 'Abel', sans-serif;
+  margin: 0;
 }
 
 @-webkit-keyframes fade {
@@ -89,10 +87,11 @@ section .container .form form input#tempsubmit {
 
 .title-detail {
   text-align: center;
-  margin: 75px 0 25px 0;
+  margin: 90px 0 50px 0;
 }
 .title-detail h1 {
 	font-family: 'Abel', sans-serif;
+  margin: 0;
 }
 
 .ubersicht {
@@ -115,6 +114,18 @@ section .container .form form input#tempsubmit {
   float: right;
   margin-right: 2px;
   width: 100%
+}
+
+#alert {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-top: -175px;
+  text-align: center;
+}
+.alert-danger {
+  display: none;
 }
 
 /* -- ENDE ÜBERSICHT -- */

@@ -65,12 +65,11 @@ function insertEintrag(){
       if(data == "Nothing posted")
       {
         $("#alert").fadeIn("slow");
-        $("#alert").html("error");
-        $("#alert").fadeOut(2000);
+        $("#alert").html("Bitte Wert zwischen -50 und 60 eingben.");
       }
       else
       {
-        // do nothing
+        $("#alert").fadeOut(10);
       }
     },
     error:function(data){
