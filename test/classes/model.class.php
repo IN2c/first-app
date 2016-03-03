@@ -1,4 +1,5 @@
 <?php
+//Janosh (Grundgerüst & __construct), Oliver&Tobias (Restliche Funktionen)
 class Model{
 
   private $db_link;

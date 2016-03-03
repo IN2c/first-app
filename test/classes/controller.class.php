@@ -1,4 +1,5 @@
 <?php
+//Janosh (Grundgerüst), Oliver&Tobias (alle Funktionen ausser __construct() und displayEingabe()).
 	class Controller{
 
 		private $template;
@@ -12,7 +13,7 @@
 			$this->data = Model::getData();
 			$this->model = new Model();
 		}
-
+		//Setzt das richtige Template, um die Seite Eingabe anzuzeigen
 		public function displayEingabe(){
 			$this->view->setTemplate("eingabe");
 			$this->view->setContent("title", "Eingabe");
@@ -20,7 +21,7 @@
 
 			return $this->view->parseTemplate();
 		}
-
+		//Setzt das richtige Template, um die Seite Übersicht anzuzeigen
 		public function displayUebersicht(){
 			$this->view->setTemplate("uebersicht");
 			$this->view->setContent("title", "Übersicht");
@@ -28,7 +29,7 @@
 
 			return $this->view->parseTemplate();
 		}
-
+		//Setzt das richtige Template, um die Seite Geolocation anzuzeigen
 		public function displayGeolocation(){
 			$this->view->setTemplate("geolocation");
 			$this->view->setContent("title", "Geolocation");
@@ -36,17 +37,17 @@
 
 			return $this->view->parseTemplate();
 		}
-
+		//Diese Funktion bekommt die ID eines DB-Eintrages und speichert sie in eine Variable
 		public function getID($id)
 		{
 			$this->ID = $id;
 		}
-
+		//Diese Funktion bekommt den Wert des Eingabefeldes und speichert sie in eine Variable
 		public function getWert($wert)
 		{
 			$this->wert = $wert;
 		}
-
+		//Es wird die richtige Funktion ausgeführt
 		public function executeFunction($funktion)
 		{
 			if($funktion == "insert")

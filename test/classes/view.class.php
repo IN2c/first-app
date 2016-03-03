@@ -1,4 +1,5 @@
 <?php
+//Janosh
 	class View{
 
 		private $path       = 'templates';
