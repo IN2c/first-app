@@ -56,10 +56,10 @@ class Model{
     }
     else
     {
-      return "Variable posted";
       $sql = "INSERT INTO eintrag VALUES (NULL, '".$Temperatur."', '".$datum."');";
       mysqli_query($this->db_link, $sql);
       mysqli_close($this->db_link);
+      return "Variable posted";
     }
   }
 
